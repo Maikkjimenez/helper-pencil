@@ -1,18 +1,51 @@
-<HomeScreen>:
-    MDBoxLayout:
-        orientation: 'vertical'
-        size_hint_y: 1.6
-        md_bg_color: 'white'  # Nuevo color de fondo
 
-        MDBoxLayout:
-            padding: 10
-            spacing: 2
-            
+<MyScreenManager>:
+    FirstScreen:
+    SecondScreen:
 
-        GridLayout:
-            rows: 2
-            Image:
-                source: 'logo.png'
-            Label:
-                text: 'This is a label'
+<FirstScreen>:
+	name: 'first_screen'
+    MDFloatLayout:
+        mg_bg_color: 1, 1, 1, 1
+        Image:
+            source:"herramienta-de-audio-con-altavoz.png"
+            size_hint: 0.15, 0.15
+            pos_hint: {"center_x": 0.5, "center_y": 0.85}
+        Image:
+            source: "logo.png"
+            size_hint: 0.7, 0.7
+            pos_hint: {"center_x": 0.5, "center_y": 0.55}
+        MDLabel:
+            text: "HELPER"
+            pos_hint: {"center_x": 0.5, "center_y": 0.70}
+            halign: "center"
+            font_size: "30sp"
+            bold: True
+        MDLabel:
+            text: "PENCIL"	
+            pos_hint: {"center_x": 0.5, "center_y": 0.35}
+            halign: "center"
+            font_size: "30sp"
+            bold: True
+        MDLabel:
+            text: "by Maiky Jimenez y David Rangel "	
+            pos_hint: {"center_x": 0.5, "center_y": 0.24}
+            halign: "center"
+            font_size: "15sp"
+            bold: True
+        BoxLayout:
+        	Button:
+	            background_normal:"flecha-curva-apuntando-a-la-derecha.png"
+	            size_hint: 0.9,0.6
+	            size: 40,40
+	            pos_hint: {"center_x": 0.5, "center_y": 0.16}
+	            on_release: app.root.current = 'second_screen'
+        MDLabel:
+            text: "2023 Education Project"	
+            pos_hint: {"center_x": 0.5, "center_y": 0.06}
+            halign: "center"
+            font_size: "15sp"
+            bold: True
 
+<SecondScreen>:
+	name: 'second_screen'
